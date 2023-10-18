@@ -46,6 +46,9 @@ dependencies:
   auto_route_generator: ^7.3.1
   equatable: ^2.0.5
   flag: ^7.0.0
+  shared_preferences: ^2.2.2
+  bloc: ^8.1.2
+  localstorage: ^4.0.1+4
 
 dev_dependencies:
   flutter_test:

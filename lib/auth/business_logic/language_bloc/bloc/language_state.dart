@@ -1,10 +1,18 @@
 part of 'language_bloc.dart';
 
 sealed class LanguageState extends Equatable {
-  const LanguageState();
-  
+  final String? language;
+
+  const LanguageState({
+    required this.language,
+  });
+
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [language];
 }
 
-final class LanguageInitial extends LanguageState {}
+class LanguageInitial extends LanguageState {
+  const LanguageInitial({
+    super.language,
+  });
+}

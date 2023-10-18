@@ -1,7 +1,9 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
+import 'package:drawertest/auth/business_logic/language_bloc/bloc/language_bloc.dart';
 import 'package:drawertest/routes/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,6 +19,7 @@ class _ApplicationState extends State<Application> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var locale = context.watch<LanguageBloc>();
     return Material(
       child: MaterialApp.router(
         title: 'Flutter Demo',
@@ -30,6 +33,7 @@ class _ApplicationState extends State<Application> {
         supportedLocales: AppLocalizations.supportedLocales,
         debugShowCheckedModeBanner: false,
         routerConfig: appRouter.config(),
+        locale: Locale(locale.state.language.toString()),
       ),
     );
   }
